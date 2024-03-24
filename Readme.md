@@ -17,3 +17,15 @@ We are trying to setup the work directory.
 ### 4. Database Scripts
 module: data-access
 Various mysql commands to intergrate with go using the official library.
+
+### 5. API Writing
+module: web-service-gin
+This is a set of simple api with its routers.
+
+### 6. Generics
+module: generics
+This module we did generic data type for functions.
+
+### 7. Test cases
+module: fuzz
+In this module we explored the ways of writing test cases and using it to debug issues in code.
