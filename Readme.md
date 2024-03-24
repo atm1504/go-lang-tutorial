@@ -9,7 +9,7 @@ module: greetings and hello
 We create a simple module named greetings and then imported the same as a package in the hello module.
 
 ### 3. Work Directory
-module: hello-package, go.work
+module: package-example
 reference: https://go.dev/doc/tutorial/workspaces
 We are trying to setup the work directory.
 ```go run ./hello-package```
