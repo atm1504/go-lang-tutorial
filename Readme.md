@@ -13,3 +13,7 @@ module: package-example
 reference: https://go.dev/doc/tutorial/workspaces
 We are trying to setup the work directory.
 ```go run ./hello-package```
+
+### 4. Database Scripts
+module: data-access
+Various mysql commands to intergrate with go using the official library.
