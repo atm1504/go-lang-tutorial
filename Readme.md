@@ -4,6 +4,12 @@
 module: hello-world
 This is simple hello-world module for printing hello-world.
 
-### 2. Greeetings
+### 2. Greetings
 module: greetings and hello
 We create a simple module named greetings and then imported the same as a package in the hello module.
+
+### 3. Work Directory
+module: hello-package, go.work
+reference: https://go.dev/doc/tutorial/workspaces
+We are trying to setup the work directory.
+```go run ./hello-package```
