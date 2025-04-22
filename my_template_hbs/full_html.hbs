@@ -1,0 +1,187 @@
+<table style="font-family:'Montserrat',sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%"
+    border="0">
+    <tbody>
+        <tr>
+            <td class="v-container-padding-padding"
+                style="overflow-wrap:break-word;word-break:break-word;padding:0px;font-family:'Montserrat',sans-serif;"
+                align="left">
+                <div id="myC1Xtool-$pid-dm-selection$col-3$prd-12$c1x_sname:main">
+                    <div
+                        style="margin:0 auto;padding:0px;text-align:center;min-width: 320px;max-width: 620px;background:#FB4E2C">
+                                                <!-- Static Banner at the end -->
+                        <div style="text-align: center; margin: 20px 0; background-color: #000">
+                            <img src="{{data.events.triggerPlacement.recommendBanners.[0].imageUrl}}" alt="Banner"
+                                style="max-width: 100%; width: 100%;">
+                        </div>
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0" style="background:#f7f7f7">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        {{#each data.events.triggerPlacement.recommendProducts}}
+                                        {{#if (isMultipleOf @index 3)}}
+                                        {{#unless @first}}
+                                </tr>
+                            </tbody>
+                        </table>
+                        {{/unless}}
+                        <table border="0" cellpadding="0" cellspacing="0"
+                            style="margin-bottom:{{#if (isLastRowStart @index ../data.events.triggerPlacement.recommendProducts.length)}}16px{{else}}8px{{/if}};border-collapse: collapse;width:100%">
+                            <tbody>
+                                <tr>
+                                    <td style="width:15px"></td>
+                                    {{/if}}
+                                    <td style="width:31%;margin:0 auto;max-width:195px">
+                                        <div class="product-3-main-div"
+                                            style="background-color:#fff;border-collapse: collapse;border-radius: 9px;box-shadow: 0 2px 2px -1px #0003, 0 2px 2px #00000024, 0 1px 3px #0000001f;max-width:195px;">
+                                            <a href="{{linkUrl}}%%c1x_sname:main%%%%logicId:CategoryCP%%%%pid:dm-selection%%"
+                                                style="color:#333;display:block;text-decoration:none" target="_blank">
+                                                <table style="width:100%;max-width:195px;">
+                                                    <tr style="width:100%;">
+                                                        <td style="display:block;padding:15px;">
+                                                            <img src="{{imageUrl}}" alt="商品画像"
+                                                                style="height:auto;width:100%">
+                                                        </td>
+                                                    </tr>
+                                                    <tr style="width:100%;">
+                                                        <td
+                                                            style="display: block;text-align:left;padding:0px 20px 20px 20px;">
+                                                            <div class="brand-name-3-col"
+                                                                style="font-size:14px;height:15px;line-height:1;margin-bottom:2px;overflow:hidden">
+                                                                {{brand}}
+                                                            </div>
+                                                            <div class="product-name-3-col"
+                                                                style="font-size:16px;height:42px;line-height:1.3;font-weight:bold;margin-bottom:8px;overflow:hidden;">
+                                                                {{name}}
+                                                            </div>
+                                                            <div class="product-price-3-col"
+                                                                style="color: #df0011;font-size: 15px;height:36px;line-height: 1.2;margin-bottom:2px; display: block; font-family: Meiryo, sans-serif; font-weight: bold;">
+                                                                <span
+                                                                    style="font-family: Meiryo, sans-serif; font-size: 16px;">{{price}}</span>
+                                                            </div>
+                                                            <div class="product-tax-price-3-col"
+                                                                style="color: #333; display: block; font-size: 16px;height:58px;line-height: 1.2; margin-bottom: 2px; margin-top: 2px;">
+                                                                税込 {{taxPrice}}
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </a>
+                                        </div>
+                                    </td>
+                                    {{#unless (isLastInRow @index
+                                    ../data.events.triggerPlacement.recommendProducts.length)}}
+                                    <td style="width:8px"></td>
+                                    {{/unless}}
+                                    {{#if (isLastInRow @index
+                                    ../data.events.triggerPlacement.recommendProducts.length)}}
+                                    <td style="width:15px"></td>
+                                    {{/if}}
+                                    {{#if (isLastProduct @index
+                                    ../data.events.triggerPlacement.recommendProducts.length)}}
+                                </tr>
+                            </tbody>
+                        </table>
+                        {{/if}}
+                        {{/each}}
+                        <!-- Static Banner at the end -->
+                        <div style="text-align: center; margin: 20px 0; background-color: #000">
+                            <img src="{{data.events.triggerPlacement.recommendBanners.[0].imageUrl}}" alt="Banner"
+                                style="max-width: 100%; width: 100%;">
+                        </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<table>
+        <tbody>
+        <tr>
+            <td class="v-container-padding-padding"
+                style="overflow-wrap:break-word;word-break:break-word;padding:0px;font-family:'Montserrat',sans-serif;"
+                align="left">
+                <div id="myC1Xtool-$pid-dm-selection$col-3$prd-12$c1x_sname:main">
+                    <div
+                        style="margin:0 auto;padding:0px;text-align:center;min-width: 320px;max-width: 620px;background:#FB4E2C">
+                                                <!-- Static Banner at the end -->
+                        <div style="text-align: center; margin: 20px 0; background-color: #000">
+                            <img src="{{data.recsys.dm-selection.recommendBanners.[0].imageUrl}}" alt="Banner"
+                                style="max-width: 100%; width: 100%;">
+                        </div>
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0" style="background:#f7f7f7">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        {{#each data.recsys.dm-selection.recommendProducts}}
+                                        {{#if (isMultipleOf @index 3)}}
+                                        {{#unless @first}}
+                                </tr>
+                            </tbody>
+                        </table>
+                        {{/unless}}
+                        <table border="0" cellpadding="0" cellspacing="0"
+                            style="margin-bottom:{{#if (isLastRowStart @index ../data.recsys.dm-selection.recommendProducts.length)}}16px{{else}}8px{{/if}};border-collapse: collapse;width:100%">
+                            <tbody>
+                                <tr>
+                                    <td style="width:15px"></td>
+                                    {{/if}}
+                                    <td style="width:31%;margin:0 auto;max-width:195px">
+                                        <div class="product-3-main-div"
+                                            style="background-color:#fff;border-collapse: collapse;border-radius: 9px;box-shadow: 0 2px 2px -1px #0003, 0 2px 2px #00000024, 0 1px 3px #0000001f;max-width:195px;">
+                                            <a href="{{linkUrl}}%%c1x_sname:main%%%%logicId:CategoryCP%%%%pid:dm-selection%%"
+                                                style="color:#333;display:block;text-decoration:none" target="_blank">
+                                                <table style="width:100%;max-width:195px;">
+                                                    <tr style="width:100%;">
+                                                        <td style="display:block;padding:15px;">
+                                                            <img src="{{imageUrl}}" alt="商品画像"
+                                                                style="height:auto;width:100%">
+                                                        </td>
+                                                    </tr>
+                                                    <tr style="width:100%;">
+                                                        <td
+                                                            style="display: block;text-align:left;padding:0px 20px 20px 20px;">
+                                                            <div class="brand-name-3-col"
+                                                                style="font-size:14px;height:15px;line-height:1;margin-bottom:2px;overflow:hidden">
+                                                                {{brand}}
+                                                            </div>
+                                                            <div class="product-name-3-col"
+                                                                style="font-size:16px;height:42px;line-height:1.3;font-weight:bold;margin-bottom:8px;overflow:hidden;">
+                                                                {{name}}
+                                                            </div>
+                                                            <div class="product-price-3-col"
+                                                                style="color: #df0011;font-size: 15px;height:36px;line-height: 1.2;margin-bottom:2px; display: block; font-family: Meiryo, sans-serif; font-weight: bold;">
+                                                                <span
+                                                                    style="font-family: Meiryo, sans-serif; font-size: 16px;">{{price}}</span>
+                                                            </div>
+                                                            <div class="product-tax-price-3-col"
+                                                                style="color: #333; display: block; font-size: 16px;height:58px;line-height: 1.2; margin-bottom: 2px; margin-top: 2px;">
+                                                                税込 {{taxPrice}}
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </a>
+                                        </div>
+                                    </td>
+                                    {{#unless (isLastInRow @index
+                                    ../data.recsys.dm-selection.recommendProducts.length)}}
+                                    <td style="width:8px"></td>
+                                    {{/unless}}
+                                    {{#if (isLastInRow @index
+                                    ../data.recsys.dm-selection.recommendProducts.length)}}
+                                    <td style="width:15px"></td>
+                                    {{/if}}
+                                    {{#if (isLastProduct @index
+                                    ../data.recsys.dm-selection.recommendProducts.length)}}
+                                </tr>
+                            </tbody>
+                        </table>
+                        {{/if}}
+                        {{/each}}
+                        <!-- Static Banner at the end -->
+                        <div style="text-align: center; margin: 20px 0; background-color: #000">
+                            <img src="{{data.recsys.dm-selection.recommendBanners.[0].imageUrl}}" alt="Banner"
+                                style="max-width: 100%; width: 100%;">
+                        </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
