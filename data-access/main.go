@@ -4,14 +4,21 @@ import (
 	"log"
 	"net/http"
 
+	_ "data-access/docs" // This is where the generated docs are
 	"data-access/internal/config"
 	"data-access/internal/database"
 	"data-access/internal/handlers"
 	"data-access/internal/repository"
+	"data-access/internal/routes"
 
-	"github.com/gorilla/mux"
+	httpSwagger "github.com/swaggo/http-swagger"
 )
 
+// @title Album API
+// @version 1.0
+// @description This is a sample album service API
+// @host localhost:8080
+// @BasePath /
 func main() {
 	// Load configuration
 	cfg, err := config.LoadConfig()
@@ -33,15 +40,14 @@ func main() {
 	albumHandler := handlers.NewAlbumHandler(albumRepo)
 
 	// Initialize router
-	router := mux.NewRouter()
+	router := routes.NewRouter(albumHandler)
 
-	// Register routes
-	router.HandleFunc("/albums", albumHandler.GetByArtist).Methods("GET")
-	router.HandleFunc("/albums/{id:[0-9]+}", albumHandler.GetByID).Methods("GET")
-	router.HandleFunc("/albums", albumHandler.Create).Methods("POST")
+	// Add Swagger documentation route
+	router.Router.PathPrefix("/swagger/").Handler(httpSwagger.WrapHandler)
 
 	// Start server
 	log.Printf("Server starting on port 8080...")
+	log.Printf("Swagger documentation available at http://localhost:8080/swagger/index.html")
 	if err := http.ListenAndServe(":8080", router); err != nil {
 		log.Fatalf("Failed to start server: %v", err)
 	}

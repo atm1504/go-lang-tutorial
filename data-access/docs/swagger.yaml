@@ -1,0 +1,117 @@
+basePath: /
+definitions:
+  models.Album:
+    properties:
+      artist:
+        type: string
+      id:
+        type: integer
+      price:
+        minimum: 0
+        type: number
+      title:
+        type: string
+    required:
+    - artist
+    - price
+    - title
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: This is a sample album service API
+  title: Album API
+  version: "1.0"
+paths:
+  /albums:
+    get:
+      consumes:
+      - application/json
+      description: Retrieve all albums by a specific artist
+      parameters:
+      - description: Artist name
+        in: query
+        name: artist
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.Album'
+            type: array
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+      summary: Get albums by artist name
+      tags:
+      - albums
+    post:
+      consumes:
+      - application/json
+      description: Create a new album with the provided details
+      parameters:
+      - description: Album object
+        in: body
+        name: album
+        required: true
+        schema:
+          $ref: '#/definitions/models.Album'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            additionalProperties:
+              type: integer
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+      summary: Create a new album
+      tags:
+      - albums
+  /albums/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Retrieve a specific album by its ID
+      parameters:
+      - description: Album ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Album'
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+        "404":
+          description: Not Found
+          schema:
+            type: string
+      summary: Get album by ID
+      tags:
+      - albums
+swagger: "2.0"
